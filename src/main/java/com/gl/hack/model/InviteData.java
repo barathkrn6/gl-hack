@@ -1,8 +1,8 @@
 package com.gl.hack.model;
 
-import java.io.Serializable;
-import java.sql.Timestamp;
 import javax.persistence.*;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 
 /**
@@ -19,7 +19,7 @@ public class InviteData implements Serializable {
     private Integer id;
 
     @Column(name = "created_at")
-    private Timestamp createdAt;
+    private LocalDateTime createdAt;
 
     @Column(name = "invited_by_user_id")
     private Integer invitedByUserId;
@@ -28,7 +28,7 @@ public class InviteData implements Serializable {
     private Integer invitedToUserId;
 
     @Column(name = "updated_at")
-    private Timestamp updatedAt;
+    private LocalDateTime updatedAt;
 
     public InviteData() {
     }
@@ -41,11 +41,11 @@ public class InviteData implements Serializable {
         this.id = id;
     }
 
-    public Timestamp getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return this.createdAt;
     }
 
-    public void setCreatedAt(Timestamp createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -65,11 +65,11 @@ public class InviteData implements Serializable {
         this.invitedToUserId = invitedToUserId;
     }
 
-    public Timestamp getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
         return this.updatedAt;
     }
 
-    public void setUpdatedAt(Timestamp updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 

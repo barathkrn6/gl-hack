@@ -2,12 +2,13 @@ package com.gl.hack.model;
 
 import com.vladmihalcea.hibernate.type.array.IntArrayType;
 import com.vladmihalcea.hibernate.type.array.StringArrayType;
+import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.annotations.TypeDefs;
-import javax.persistence.*;
 
+import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 
 /**
@@ -24,9 +25,9 @@ import java.sql.Timestamp;
         )
 })
 @Entity
-@Table(name = "hackothons")
-@NamedQuery(name = "Hackothon.findAll", query = "SELECT h FROM Hackothon h")
-public class Hackothon implements Serializable {
+@Table(name = "hackathons")
+@NamedQuery(name = "Hackathon.findAll", query = "SELECT h FROM Hackathon h")
+public class Hackathon implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -34,11 +35,12 @@ public class Hackothon implements Serializable {
     private Integer id;
 
     @Column(name = "created_at")
-    private Timestamp createdAt;
+    private LocalDateTime createdAt;
 
     @Column(name = "end_date")
-    private Timestamp endDate;
+    private LocalDateTime endDate;
 
+    @Type(type = "int-array")
     @Column(name = "hidden_test_cases")
     private Integer[] hiddenTestCases;
 
@@ -47,18 +49,20 @@ public class Hackothon implements Serializable {
     private String question;
 
     @Column(name = "start_date")
-    private Timestamp startDate;
+    private LocalDateTime startDate;
 
+    @Type(type = "int-array")
     @Column(name = "test_cases")
     private Integer[] testCases;
 
     @Column(name = "updated_at")
-    private Timestamp updatedAt;
+    private LocalDateTime updatedAt;
 
+    @Type(type = "int-array")
     @Column(name = "visible_test_cases")
     private Integer[] visibleTestCases;
 
-    public Hackothon() {
+    public Hackathon() {
     }
 
     public Integer getId() {
@@ -69,19 +73,19 @@ public class Hackothon implements Serializable {
         this.id = id;
     }
 
-    public Timestamp getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return this.createdAt;
     }
 
-    public void setCreatedAt(Timestamp createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Timestamp getEndDate() {
+    public LocalDateTime getEndDate() {
         return this.endDate;
     }
 
-    public void setEndDate(Timestamp endDate) {
+    public void setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
     }
 
@@ -109,11 +113,11 @@ public class Hackothon implements Serializable {
         this.question = question;
     }
 
-    public Timestamp getStartDate() {
+    public LocalDateTime getStartDate() {
         return this.startDate;
     }
 
-    public void setStartDate(Timestamp startDate) {
+    public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
@@ -125,11 +129,11 @@ public class Hackothon implements Serializable {
         this.testCases = testCases;
     }
 
-    public Timestamp getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
         return this.updatedAt;
     }
 
-    public void setUpdatedAt(Timestamp updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 
