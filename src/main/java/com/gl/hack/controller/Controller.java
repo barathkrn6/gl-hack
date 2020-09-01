@@ -4,10 +4,10 @@ import com.gl.hack.model.request.SubmitHackathon;
 import com.gl.hack.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
+
+import java.util.Map;
 
 @RestController
 public class Controller {
@@ -18,5 +18,10 @@ public class Controller {
     @PostMapping("/submit-hackathon")
     public ResponseEntity<?> submitHackathon(@RequestBody SubmitHackathon submitHackathon, UriComponentsBuilder ucBuilder) {
         return service.submitHackathon(submitHackathon, ucBuilder);
+    }
+
+    @GetMapping("/get-leaderboard")
+    public Map<String, Object> getLeaderboard(@RequestParam(name = "hackathon_id", required = false) Integer hackathonId) {
+        return service.getLeaderboard(hackathonId);
     }
 }
