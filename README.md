@@ -166,33 +166,33 @@ Step 3 : Run the spring boot application by linked database docker
 
 # Sample JSON for /submit-hackathon API
 
-  {
-    "group_id": 1,
-    "hackathon_id": 1,
-    "submit_testcases": [
-      {
-        "submitted_values": [
-          "A"
-        ],
-        "testcase_id": 1
-      },
-      {
-        "submitted_values": [
-          "B"
-        ],
-        "testcase_id": 2
-      },
-      {
-        "submitted_values": [
-          "C"
-        ],
-        "testcase_id": 3
-      },
-      {
-        "submitted_values": [
-          "DD"
-        ],
-        "testcase_id": 4
-      }
-    ]
-  }
+	  {
+	    "group_id": 1,
+	    "hackathon_id": 1,
+	    "submit_testcases": [
+	      {
+		"submitted_values": [
+		  "A"
+		],
+		"testcase_id": 1
+	      },
+	      {
+		"submitted_values": [
+		  "B"
+		],
+		"testcase_id": 2
+	      },
+	      {
+		"submitted_values": [
+		  "C"
+		],
+		"testcase_id": 3
+	      },
+	      {
+		"submitted_values": [
+		  "DD"
+		],
+		"testcase_id": 4
+	      }
+	    ]
+	  }
