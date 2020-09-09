@@ -162,7 +162,7 @@ Step 3 : Run the spring boot application by linked database docker
 
 # Swagger URL
 
-	http://{host_name/ip_addr}:8086/swagger-ui.html
+	http://{host_name/ip_addr}:8080/swagger-ui.html
 
 # Sample JSON for /submit-hackathon API
 
